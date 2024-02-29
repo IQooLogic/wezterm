@@ -32,12 +32,12 @@ config.hide_tab_bar_if_only_one_tab = true
 local act = wezterm.action
 config.keys = {
 	{-- split pane
-		key = "O",
+		key = "o",
 		mods = "CTRL|SHIFT",
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" })
 	},
 	{
-		key = "E",
+		key = "e",
 		mods = "CTRL|SHIFT",
 		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" })
 	},
