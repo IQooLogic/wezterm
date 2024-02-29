@@ -85,6 +85,29 @@ config.keys = {
 		key = "]",
 		mods = "ALT",
 		action = act.ActivateTabRelative(1)
+	},
+	{-- split pane right and start btop
+		key = "t",
+		mods = "CTRL|ALT|SHIFT",
+		action = act.SplitPane({
+			direction = "Right",
+			command = { args = { "btop" } },
+			size = { Percent = 50 }
+		})
+	},
+	{-- split pane right and start zellij
+		key = "x",
+		mods = "CTRL|ALT",
+		action = act.SplitPane({
+			direction = "Right",
+			command = { args = { "zellij" } },
+			size = { Percent = 50 }
+		})
+	},
+	{-- open new window and start zellij
+		key = "z",
+		mods = "CTRL|ALT|SHIFT",
+		action = act.SpawnCommandInNewWindow({ args = { "zellij" } })
 	}
 }
 
