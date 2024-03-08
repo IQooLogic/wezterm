@@ -1,5 +1,5 @@
 -- Pull in the wezterm API
-local wezterm = require("wezterm")
+local wezterm = require 'wezterm'
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -7,9 +7,8 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = 'Catppuccin Mocha'
 config.font_size = 14.0
-
 -- config.window_background_image = '/home/milos/.config/wezterm/bg.jpg'
 config.window_background_opacity = 1.0
 config.text_background_opacity = 1.0
@@ -110,6 +109,16 @@ config.keys = {
 		action = act.SpawnCommandInNewWindow({ args = { "zellij" } })
 	}
 }
+
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  -- Configs for Windows only
+  -- font_dirs = {
+  --     'C:\\Users\\whoami\\.dotfiles\\.fonts'
+  -- }
+  -- config.default_prog = { 'pwsh.exe', '-l' }
+  -- default_prog = {'wsl.exe', '~', '-d', 'Ubuntu-22.04'}
+  config.default_domain = 'WSL:Ubuntu-22.04'
+end
 
 -- and finally, return the configuration to wezterm
 return config
