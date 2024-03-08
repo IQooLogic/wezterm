@@ -120,5 +120,15 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
   config.default_domain = 'WSL:Ubuntu-22.04'
 end
 
+if wezterm.target_triple == 'x86_64-apple-darwin' then
+  -- Configs for OSX only
+  -- font_dirs    = { '$HOME/.dotfiles/.fonts' }
+end
+
+if wezterm.target_triple == 'x86_65-unknown-linux-gnu' then
+  -- Configs for Linux only
+  -- font_dirs    = { '$HOME/.dotfiles/.fonts' }
+end
+
 -- and finally, return the configuration to wezterm
 return config
