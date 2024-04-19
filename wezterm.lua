@@ -1,5 +1,5 @@
 -- Pull in the wezterm API
-local wezterm = require("wezterm")
+local wezterm = require 'wezterm'
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -114,6 +114,26 @@ config.keys = {
 		action = act.SpawnCommandInNewWindow({ args = { "zellij" } })
 	}
 }
+
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  -- Configs for Windows only
+  -- font_dirs = {
+  --     'C:\\Users\\whoami\\.dotfiles\\.fonts'
+  -- }
+  -- config.default_prog = { 'pwsh.exe', '-l' }
+  -- default_prog = {'wsl.exe', '~', '-d', 'Ubuntu-22.04'}
+  config.default_domain = 'WSL:Ubuntu-22.04'
+end
+
+if wezterm.target_triple == 'x86_64-apple-darwin' then
+  -- Configs for OSX only
+  -- font_dirs    = { '$HOME/.dotfiles/.fonts' }
+end
+
+if wezterm.target_triple == 'x86_65-unknown-linux-gnu' then
+  -- Configs for Linux only
+  -- font_dirs    = { '$HOME/.dotfiles/.fonts' }
+end
 
 -- and finally, return the configuration to wezterm
 return config
