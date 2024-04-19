@@ -4,11 +4,15 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+-- config.enable_wayland = true
+-- config.front_end = "OpenGL"
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Mocha"
-config.font_size = 14.0
+-- config.color_scheme = "Catppuccin Mocha"
+config.font_size = 16.0
+
+config.color_scheme = "GruvboxDarkHard"
 
 -- config.window_background_image = '/home/milos/.config/wezterm/bg.jpg'
 config.window_background_opacity = 1.0
@@ -43,7 +47,7 @@ config.keys = {
 	},
 	{-- close current pane
 		key = "w",
-		mods = "CTRL",
+		mods = "CTRL|SHIFT",
 		action = act.CloseCurrentPane({ confirm = true })
 	},
 	-- {-- rotate panes
