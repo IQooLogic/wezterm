@@ -90,6 +90,16 @@ config.keys = {
 		mods = "ALT",
 		action = act.ActivateTabRelative(1)
 	},
+    { -- move tabs relative to
+        key = '{',
+        mods = 'SHIFT|ALT',
+        action = act.MoveTabRelative(-1)
+    },
+    {
+        key = '}',
+        mods = 'SHIFT|ALT',
+        action = act.MoveTabRelative(1)
+    },
 	{-- split pane right and start btop
 		key = "t",
 		mods = "CTRL|ALT|SHIFT",
