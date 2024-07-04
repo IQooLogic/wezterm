@@ -15,7 +15,7 @@ config.font_size = 16.0
 config.color_scheme = "GruvboxDarkHard"
 
 -- config.window_background_image = '/home/milos/.config/wezterm/bg.jpg'
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.8
 config.text_background_opacity = 1.0
 
 config.initial_cols = 160
