@@ -12,21 +12,33 @@ local config = wezterm.config_builder()
 -- config.color_scheme = "Catppuccin Mocha"
 config.font_size = 16.0
 
-config.color_scheme = "GruvboxDarkHard"
+-- config.color_scheme = "GruvboxDarkHard"
+config.colors = require("cyberdream")
 
 -- config.window_background_image = '/home/milos/.config/wezterm/bg.jpg'
-config.window_background_opacity = 0.8
-config.text_background_opacity = 1.0
+config.window_background_opacity = 0.9
+config.text_background_opacity = 0.7
 
 config.initial_cols = 160
 config.initial_rows = 48
 
+config.window_close_confirmation = "NeverPrompt"
+
 config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
+	left = 2,
+	right = 2,
+	top = 2,
+	bottom = 2,
 }
+
+config.inactive_pane_hsb = {
+	saturation = 1.0,
+	brightness = 0.85,
+}
+
+-- config.colors = {
+--     split = "#444444",
+-- }
 
 config.font = wezterm.font "JetBrains Mono"
 config.harfbuzz_features = { 'calt=0' } -- disable ligatures
