@@ -36,10 +36,6 @@ config.inactive_pane_hsb = {
 	brightness = 0.85,
 }
 
--- config.colors = {
---     split = "#444444",
--- }
-
 config.font = wezterm.font "JetBrains Mono"
 config.harfbuzz_features = { 'calt=0' } -- disable ligatures
 
